@@ -14,7 +14,7 @@ def extract_and_parse_menu_items(input_source):
         images = convert_from_path(input_source)
     elif input_source.lower().endswith(('.jpg', '.jpeg', '.png')):
         images.append(Image.open(input_source))
-        
+
     # use a openbrowser instead of downloading as pdf     
     elif input_source.startswith('http'):
         response = requests.get(input_source)
@@ -53,4 +53,3 @@ def extract_and_parse_menu_items(input_source):
     except Exception as e:
         print(f"Error using GPT-3.5 for OCR and parsing: {e}")
         return []
-
